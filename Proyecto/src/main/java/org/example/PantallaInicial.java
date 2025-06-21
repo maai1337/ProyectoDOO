@@ -22,13 +22,11 @@ public class PantallaInicial extends JPanel {
         panelDistribucion =new PanelDistribucion();
         panelNombre = new PanelNombre();
         panelGenerador = new PanelGenerador();
-
+        add(panelNombre);
         add(panelAistentes);
         add(panelDatos);
-
-        add(panelDistribucion);
         add(panelTipoFase);
-        add(panelNombre);
+        add(panelDistribucion);
         add(panelGenerador);
 
     }
