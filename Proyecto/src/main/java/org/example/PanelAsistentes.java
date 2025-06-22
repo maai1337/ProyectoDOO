@@ -1,9 +1,10 @@
 package org.example;
-
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class PanelAsistentes extends JPanel {
+public class PanelAsistentes extends JPanel implements ActionListener{
 
     //estados
     private enum Estado{
@@ -12,8 +13,6 @@ public class PanelAsistentes extends JPanel {
         Completo
     }
     private Estado estadoActual;
-
-
     //referencias a otros paneles
     private PantallaInicial pantallaInicial;
 
@@ -48,7 +47,7 @@ public class PanelAsistentes extends JPanel {
        cantidad.setForeground(Color.white);
 
        //esto ve como hacer el spiner y hacer que se limite segun la fase
-       SpinnerNumberModel model = new SpinnerNumberModel(4,4,50,1);
+       SpinnerNumberModel model = new SpinnerNumberModel(4,2,50,1);
        this.cantidad_participantes = new JSpinner(model);
        cantidad_participantes.setBounds(150,140,100,30);
         // en teoria esto es apra accceder al editor del texto del spin
@@ -63,9 +62,9 @@ public class PanelAsistentes extends JPanel {
        this.aceptar = new JButton("Confirmar");
       aceptar.setBackground(Color.white);
       aceptar.setBounds(350,250,100,30) ;
+      aceptar.addActionListener(this);
 
       //botones
-
 
        add(aceptar);
        add(restriccion);
@@ -85,6 +84,11 @@ public class PanelAsistentes extends JPanel {
         repaint();
         revalidate();
    }
+    @Override
+    public void actionPerformed(ActionEvent e){
+            int nParticipantes = (int)cantidad_participantes.getValue();
+            System.out.println(nParticipantes);
+    };
 
 
 }

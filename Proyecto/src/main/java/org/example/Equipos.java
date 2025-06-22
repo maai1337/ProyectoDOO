@@ -2,7 +2,7 @@ package org.example;
 import java.util.ArrayList;
 
 public class Equipos extends Participante{
-    private ArrayList<T> jugador;
+    private ArrayList jugador;
 
     /**
      * cada equipo contendra un acantidad de participantes
