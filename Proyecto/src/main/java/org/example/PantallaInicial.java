@@ -30,9 +30,9 @@ public class PantallaInicial extends JPanel {
         GridLayout Inicio = new GridLayout(2, 3);
         setLayout(Inicio);
 
-        panelAistentes = new PanelAsistentes();
+        panelAistentes = new PanelAsistentes(this);
         panelDatos = new PanelDatos();
-        panelTipoFase = new PanelTipoFase();
+        panelTipoFase = new PanelTipoFase(this);
         panelDistribucion = new PanelDistribucion();
         panelNombre = new PanelNombre(this);
         panelGenerador = new PanelGenerador();
@@ -62,11 +62,11 @@ public class PantallaInicial extends JPanel {
                 setPanelEnabled(panelNombre,true);
 
                 break;
-            case 4:
+            case 3:
                 setPanelEnabled(panelAistentes,true);
 
                 break;
-            case 3:
+            case 4:
                 setPanelEnabled(panelDatos,true);
 
                 break;
@@ -100,6 +100,14 @@ public class PantallaInicial extends JPanel {
             comp.setEnabled(interruptor);
 
         }
+    }
+    // se encargue de mover info de un panel a otro
+    public void intel(){
+        int min = panelTipoFase.getMinimo();
+        int max = panelTipoFase.getMaximo();
+
+        panelAistentes.setrestriccion(min,max);
+
     }
 
 
