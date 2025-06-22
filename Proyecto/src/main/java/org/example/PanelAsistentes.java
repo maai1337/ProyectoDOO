@@ -59,7 +59,7 @@ public class PanelAsistentes extends JPanel implements ActionListener{
 
       restriccion.setBounds(100,180,2000,50);
 
-       this.aceptar = new JButton("Confirmar");
+      this.aceptar = new JButton("Confirmar");
       aceptar.setBackground(Color.white);
       aceptar.setBounds(350,250,100,30) ;
       aceptar.addActionListener(this);
@@ -85,10 +85,17 @@ public class PanelAsistentes extends JPanel implements ActionListener{
         revalidate();
    }
     @Override
-    public void actionPerformed(ActionEvent e){
-            int nParticipantes = (int)cantidad_participantes.getValue();
-            System.out.println(nParticipantes);
-    };
+    public void actionPerformed(ActionEvent e) {
+        int nParticipantes = (int) cantidad_participantes.getValue();
+        System.out.println(nParticipantes);
+        //aqui se crearar un jframe donde se ingresaran los datos de los participantes de cada equipo
+        datosJugadores(nParticipantes);
+    }
+   public void datosJugadores(int n) {
 
+       for(int i=0; i<n; i++) {
+           PanelDatosJugadores v = new PanelDatosJugadores(i + 1); //hay que cambiar el numero del contructor, ya que se debe hacer con el numero de equipos no se participantes
+       }
+   }
 
 }
