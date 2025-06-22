@@ -1,6 +1,8 @@
 package org.example;
 import javax.swing.*;
-public class PanelNombre extends JPanel {
+import java.awt.event.ActionListener;
+
+public class PanelNombre  extends JPanel {
 
     //estado del panel
     private enum Estado{
@@ -10,6 +12,8 @@ public class PanelNombre extends JPanel {
     }
     private Estado estadoActual;
 
+    //referencia a la clase principal
+    private PantallaInicial pantallaInicial;
 
     //Mensajes del sistema
     private JLabel mensaje;
@@ -28,8 +32,9 @@ public class PanelNombre extends JPanel {
     private String nombre_event;
     private String tipo_torneo_event;
 
-    public PanelNombre() {
+    public PanelNombre(PantallaInicial inicial) {
         this.setLayout(null);
+        this.pantallaInicial = inicial;
         this.estadoActual = Estado.Ingreso_nombre;
         this.mensaje = new JLabel("Ingrese nombre del torneo");
         this.mensaje.setBounds(10, 10, 160, 20);
@@ -46,13 +51,15 @@ public class PanelNombre extends JPanel {
         this.guardar.setBounds(200, 200, 100, 20);
         guardar.addActionListener(e -> avanzar());
 
-
-        this.siguiente = new JButton("Siguiente");
-        this.siguiente.setBounds(350, 350, 100, 20);
-
         this.cancelar = new JButton("Cancelar");
         this.cancelar.setBounds(20, 200, 100, 20);
         cancelar.addActionListener(e -> retroseder());
+
+        this.siguiente = new JButton("Siguiente");
+        this.siguiente.setBounds(350, 350, 100, 20);
+        // envia a panel principal si se puede o no
+        siguiente.addActionListener(e -> seCompleto(estadoActual));
+
 
         add(mensaje);
         add(campoIngreso);
@@ -137,5 +144,14 @@ public class PanelNombre extends JPanel {
         return tipo_torneo_event;
     }
 
+    //esto cambia el estado envianod el numero del estado siguiente
 
+    public void seCompleto(Estado estadoActual) {
+        if(estadoActual == Estado.Completo) {
+             pantallaInicial.cambiarEstadoActual(2);
+        }else{
+            JOptionPane.showMessageDialog(null, "Termine de completar la informacion");
+
+        }
+    }
 }
