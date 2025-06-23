@@ -4,6 +4,8 @@ abstract class Participante {
     protected String nombre;
     protected String Contacto;
     protected int identificacion;
+    protected boolean estado;
+
     public Participante() {
     }
     /**
@@ -18,5 +20,9 @@ abstract class Participante {
     }
     public int getIdentificacion() {
         return identificacion;
+    }
+    public boolean getEstado() {return estado;}
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 }

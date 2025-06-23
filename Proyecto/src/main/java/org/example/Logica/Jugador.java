@@ -18,6 +18,7 @@ public class Jugador extends Participante{
 
     public Jugador(){
         super();
+        this.estado = 1;
     }
     public String getNombre() {
         return nombre;
@@ -41,4 +42,31 @@ public class Jugador extends Participante{
         return identificacion;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public void setContacto(String contacto) {
+        this.contacto = contacto;
+    }
+
+    public void setIdentificacion(int identificacion) {
+        this.identificacion = identificacion;
+    }
 }

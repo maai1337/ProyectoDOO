@@ -13,6 +13,7 @@ public class Equipos extends Participante{
 
     public Equipos() {
         super();
+        this.estado = 1;
     }
 
 }
