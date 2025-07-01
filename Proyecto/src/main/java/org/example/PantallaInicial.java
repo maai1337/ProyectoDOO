@@ -44,7 +44,7 @@ public class PantallaInicial extends JPanel {
         add(panelDistribucion);
         add(panelGenerador);
 
-        cambiarEstadoActual(1);
+        cambiarEstadoActual(1);///
     }
 
     public void cambiarEstadoActual(int a) {

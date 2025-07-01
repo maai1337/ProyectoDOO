@@ -89,13 +89,8 @@ public class PanelAsistentes extends JPanel implements ActionListener{
         int nParticipantes = (int) cantidad_participantes.getValue();
         System.out.println(nParticipantes);
         //aqui se crearar un jframe donde se ingresaran los datos de los participantes de cada equipo
-        datosJugadores(nParticipantes);
+        frameTipo nuevaVentana = new frameTipo();
+        nuevaVentana.setVisible(true);
     }
-   public void datosJugadores(int n) {
-
-       for(int i=0; i<n; i++) {
-           PanelDatosJugadores v = new PanelDatosJugadores(i + 1); //hay que cambiar el numero del contructor, ya que se debe hacer con el numero de equipos no se participantes
-       }
-   }
 
 }
