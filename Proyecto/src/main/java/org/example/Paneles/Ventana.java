@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Paneles;
 
 import javax.swing.JFrame;
 import java.awt.*;

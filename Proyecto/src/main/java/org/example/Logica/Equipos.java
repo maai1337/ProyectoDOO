@@ -1,7 +1,7 @@
-package org.example;
+package org.example.Logica;
 import java.util.ArrayList;
 
-public class Equipos extends Participante{
+public class  Equipos<T> extends Participante{
     private ArrayList<T> jugador;
 
     /**
@@ -13,7 +13,6 @@ public class Equipos extends Participante{
 
     public Equipos() {
         super();
-        this.estado = 1;
     }
 
 }
