@@ -8,7 +8,7 @@ public class frameTipo extends JFrame{
     private PanelDatosJugadores panelDatosJugadores;
     private static int n;
     public frameTipo() {
-        panelDatosJugadores = new PanelDatosJugadores(this);
+        panelDatosJugadores = new PanelDatosJugadores(this, 5);
         setTitle("Datos equipos");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

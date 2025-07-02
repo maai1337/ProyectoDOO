@@ -157,6 +157,9 @@ public class PanelAsistentes extends JPanel implements ActionListener{
             }
             break;
          case integrante:
+            //crea frame donde introducir los datos de los participantes
+            frameTipo nuevaVentana = new frameTipo();
+            nuevaVentana.setVisible(true);
 
             tamano_equipo=(int)cantidad_participantes.getValue();
             JOptionPane.showMessageDialog(null,"tamaño de los equipos: "+tamano_equipo);
@@ -171,8 +174,7 @@ public class PanelAsistentes extends JPanel implements ActionListener{
         int nParticipantes = (int) cantidad_participantes.getValue();
         System.out.println(nParticipantes);
         //aqui se crearar un jframe donde se ingresaran los datos de los participantes de cada equipo
-        frameTipo nuevaVentana = new frameTipo();
-        nuevaVentana.setVisible(true);
+
     }
 
    public int getTamano_equipo(){
