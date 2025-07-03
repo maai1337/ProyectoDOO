@@ -34,10 +34,20 @@ public class LigaStrategy implements TorneoStrategy {
 
     @Override
     public void actualizarResultados(Partido partido, ArrayList<Participante> participantes, ArrayList<Partido> partidos) {
-        // Sumar puntos al ganador
-        Participante ganador = partido.getGanador();
-        if (ganador != null) {
-            tablaPuntos.put(ganador, tablaPuntos.getOrDefault(ganador, 0) + 3);
+        if (partido.estaJugado()) {
+            Participante ganador = partido.getGanador();
+
+            if (ganador != null) {
+                // Victoria: 3 puntos al ganador
+                tablaPuntos.put(ganador, tablaPuntos.getOrDefault(ganador, 0) + 3);
+            } else { // ganador = null si el partido terminó en empate
+                // Empate: 1 punto a cada participante
+                Participante participanteA = partido.getParticipanteA();
+                Participante participanteB = partido.getParticipanteB();
+
+                tablaPuntos.put(participanteA, tablaPuntos.getOrDefault(participanteA, 0) + 1);
+                tablaPuntos.put(participanteB, tablaPuntos.getOrDefault(participanteB, 0) + 1);
+            }
         }
     }
 
