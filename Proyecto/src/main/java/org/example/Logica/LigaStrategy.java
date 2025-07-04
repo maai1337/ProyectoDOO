@@ -2,11 +2,10 @@ package org.example.Logica;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class LigaStrategy implements TorneoStrategy {
+public class LigaStrategy extends TorneoObservable implements TorneoStrategy {
 
     private HashMap<Participante, Integer> tablaPuntos = new HashMap<>();
     private ArrayList<Partido> todosLosPartidos = new ArrayList<>();
-
 
     @Override
     public ArrayList<Partido> generarPartidos(ArrayList<Participante> participantes) {
@@ -28,6 +27,7 @@ public class LigaStrategy implements TorneoStrategy {
         }
 
         todosLosPartidos.addAll(nuevosPartidos);
+        notifyObservers(); // Notificar después de generar partidos
 
         return nuevosPartidos;
     }
@@ -48,6 +48,8 @@ public class LigaStrategy implements TorneoStrategy {
                 tablaPuntos.put(participanteA, tablaPuntos.getOrDefault(participanteA, 0) + 1);
                 tablaPuntos.put(participanteB, tablaPuntos.getOrDefault(participanteB, 0) + 1);
             }
+
+            notifyObservers(); // Notificar después de actualizar resultados
         }
     }
 
@@ -65,4 +67,13 @@ public class LigaStrategy implements TorneoStrategy {
         return tablaPuntos.getOrDefault(p, 0);
     }
 
+    // Método para que los observadores puedan acceder a la tabla de puntos
+    public HashMap<Participante, Integer> getTablaPuntos() {
+        return tablaPuntos;
+    }
+
+    // Método para que los observadores puedan acceder a todos los partidos
+    public ArrayList<Partido> getTodosLosPartidos() {
+        return todosLosPartidos;
+    }
 }

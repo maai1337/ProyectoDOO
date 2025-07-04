@@ -23,8 +23,8 @@ public class Torneo {
         partidos = estrategia.generarPartidos(participantes);
     }
 
-    public void registrarResultado(Partido partido, String resultado) {
-        partido.setResultado(resultado);
+    public void registrarResultado(Partido partido, String resultado, Participante ganador) {
+        partido.setResultado(resultado, ganador);
         estrategia.actualizarResultados(partido, participantes, partidos);
     }
 

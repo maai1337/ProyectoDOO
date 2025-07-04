@@ -1,5 +1,6 @@
 package org.example.Logica;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Partido {
     private int id;
@@ -8,6 +9,27 @@ public class Partido {
     private String resultado;
     private boolean jugado;
     private LocalDateTime fechaHora;
+    private Participante ganador;
+
+    // Para torneos de eliminación
+    private Partido siguientePartidoGanador;
+    private Partido siguientePartidoPerdedor;
+
+    public Partido getSiguientePartidoPerdedor() {
+        return siguientePartidoPerdedor;
+    }
+
+    public void setSiguientePartidoPerdedor(Partido siguientePartidoPerdedor) {
+        this.siguientePartidoPerdedor = siguientePartidoPerdedor;
+    }
+
+    public Partido getSiguientePartidoGanador() {
+        return siguientePartidoGanador;
+    }
+
+    public void setSiguientePartidoGanador(Partido siguientePartidoGanador) {
+        this.siguientePartidoGanador = siguientePartidoGanador;
+    }
 
     public Partido(int id, Participante a, Participante b) {
         this.id = id;
@@ -15,11 +37,6 @@ public class Partido {
         this.participanteB = b;
         this.jugado = false;
         this.fechaHora = LocalDateTime.now();
-    }
-
-    public void setResultado(String resultado) {
-        this.resultado = resultado;
-        this.jugado = true;
     }
 
     public boolean estaJugado() {
@@ -42,10 +59,6 @@ public class Partido {
         return resultado;
     }
 
-    public boolean isJugado() {
-        return jugado;
-    }
-
     public LocalDateTime getFechaHora() {
         return fechaHora;
     }
@@ -54,8 +67,20 @@ public class Partido {
         this.fechaHora = fechaHora;
     }
 
-    public void setJugado(boolean jugado) {
-        this.jugado = jugado;
+    public void setResultado(String resultado, Participante ganador) {
+        this.resultado = resultado;
+        this.ganador = ganador;
+        this.jugado = true;
+    }
+
+    public Participante getGanador() {
+        return ganador;
+    }
+
+    public Participante getPerdedor() { // Usar en torneos de eliminación, liga no funciona
+        if (!jugado) return null;
+        if (ganador == participanteA) return participanteB;
+        else return participanteA;
     }
 
     public void setParticipanteB(Participante participanteB) {

@@ -5,22 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="958cb5eb-0559-49b8-867d-e34b246c72e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/LigaStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Partido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Torneo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/TorneoStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Equipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Equipos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Participante.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Participante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PanelAsistentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PanelAsistentes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PanelDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PanelDatos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PanelDistribucion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PanelDistribucion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PanelGenerador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PanelGenerador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PanelNombre.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PanelNombre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PanelTipoFase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PanelTipoFase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PantallaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/PantallaInicial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Paneles/Ventana.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/TorneoObservable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/TorneoObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/Proyecto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/Proyecto.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/BracketObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/EliminacionSimpleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/EliminacionSimpleStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Equipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Equipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/LigaStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/LigaStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Partido.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Partido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Torneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/main/java/org/example/Logica/Torneo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Kotlin Interface" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -45,25 +43,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;cambios-base-proyecto&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/progra/DOO/ProyectoDOO/Proyecto/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "cambios-base-proyecto",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/progra/DOO/ProyectoDOO/Proyecto/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="24" />
@@ -101,7 +100,11 @@
       <workItem from="1750703701867" duration="270000" />
       <workItem from="1750953006577" duration="14000" />
       <workItem from="1751236432915" duration="11000" />
-      <workItem from="1751324777247" duration="5324000" />
+      <workItem from="1751324777247" duration="10097000" />
+      <workItem from="1751415805812" duration="1253000" />
+      <workItem from="1751417322683" duration="4559000" />
+      <workItem from="1751494854437" duration="14629000" />
+      <workItem from="1751649557420" duration="12751000" />
     </task>
     <servers />
   </component>
