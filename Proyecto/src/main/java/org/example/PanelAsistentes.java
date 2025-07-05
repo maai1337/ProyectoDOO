@@ -127,7 +127,7 @@ public class PanelAsistentes extends JPanel implements ActionListener{
             pantallaInicial.cambiarEstadoActual(2);
             break;
          case integrante:
-            cantidad.setText("ingrese cantidad de aprticipantes");
+            cantidad.setText("ingrese cantidad de participantes");
             estadoActual=Estado.Numero;
             break;
          case Completo:
@@ -154,16 +154,18 @@ public class PanelAsistentes extends JPanel implements ActionListener{
             }else{
                cantidad.setText("ingese tamaño de equipos");
                estadoActual=Estado.integrante;
+
             }
             break;
          case integrante:
-            //crea frame donde introducir los datos de los participantes
-            frameTipo nuevaVentana = new frameTipo();
-            nuevaVentana.setVisible(true);
-
             tamano_equipo=(int)cantidad_participantes.getValue();
             JOptionPane.showMessageDialog(null,"tamaño de los equipos: "+tamano_equipo);
+
+            //crea frame donde introducir los datos de los participantes
+            frameTipo nuevaVentana = new frameTipo(tamano_equipo);
+            nuevaVentana.setVisible(true);
             estadoActual=Estado.Completo;
+
 
       }
       repaint();

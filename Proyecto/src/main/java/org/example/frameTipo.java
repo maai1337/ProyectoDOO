@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 public class frameTipo extends JFrame{
     private PanelDatosJugadores panelDatosJugadores;
     private static int n;
-    public frameTipo() {
-        panelDatosJugadores = new PanelDatosJugadores(this, 5);
+    public frameTipo(int nJugadores){
+        panelDatosJugadores = new PanelDatosJugadores(this, nJugadores);
         setTitle("Datos equipos");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

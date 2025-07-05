@@ -24,7 +24,7 @@ public class PanelDatosJugadores extends JPanel implements ActionListener {
 
     private JLabel mensaje1;
     private JLabel mensaje2;
-    private JLabel mensaje3;
+    private JLabel mensaje0;
 
     private JButton sgte;
 
@@ -34,6 +34,7 @@ public class PanelDatosJugadores extends JPanel implements ActionListener {
     ArrayList<JTextField> cajaTextoNombre;
     ArrayList<JTextField> cajaTextoRut;
 
+    ArrayList<String> nEquipos;
     ArrayList<String> gName;
     ArrayList<String> gRut;
 
@@ -47,22 +48,23 @@ public class PanelDatosJugadores extends JPanel implements ActionListener {
         gName = new ArrayList<String>();
         gRut = new ArrayList<String>();
 
+
         int a = 0;
         for(int i=1; i<=numJu; i++) {
             this.mensaje1 = new JLabel("nombre jugador" + i + ": ");
-            this.mensaje1.setBounds(10, 10+a, 160, 20);
+            this.mensaje1.setBounds(10, 15+a, 160, 20);
             this.mensaje1.setHorizontalAlignment(SwingConstants.CENTER);
             // Importante: Debes añadir los componentes al panel para que sean visibles
             this.campoIngreso = new JTextField();
-            this.campoIngreso.setBounds(10, 30+a, 160, 20);
+            this.campoIngreso.setBounds(10, 35+a, 160, 20);
             this.campoIngreso.setHorizontalAlignment(SwingConstants.CENTER);
 
             this.mensaje2 = new JLabel("RUT jugador" + i + ": ");
-            this.mensaje2.setBounds(500, 10+a, 160, 20);
+            this.mensaje2.setBounds(300, 15+a, 160, 20);
             this.mensaje2.setHorizontalAlignment(SwingConstants.CENTER);
             // Importante: Debes añadir los componentes al panel para que sean visibles
             this.campoIngresoR = new JTextField();
-            this.campoIngresoR.setBounds(500, 30+a, 160, 20);
+            this.campoIngresoR.setBounds(300, 35+a, 160, 20);
             this.campoIngresoR.setHorizontalAlignment(SwingConstants.CENTER);
 
 
@@ -88,10 +90,8 @@ public class PanelDatosJugadores extends JPanel implements ActionListener {
         for(int i=0; i<numJu; i++){
             JTextField n = (JTextField) cajaTextoNombre.get(i);
             gName.add(n.getText());
-            System.out.println(gName.get(i));
             JTextField r = (JTextField) cajaTextoRut.get(i);
             gRut.add(r.getText());
-            System.out.println(gRut.get(i));
             n.setText("");
             r.setText("");
         }
@@ -101,6 +101,20 @@ public class PanelDatosJugadores extends JPanel implements ActionListener {
     //falta agregar ingreso para los otras datos, que seran ingresados horizontalmente
     //comentario nada que ver, Bohemian Rhapsody, canción más buena
 
+    //esto deberia servir para añadir los nombres de los x equipos, pero ahora que lo analizo, deberia ser un jpanel
+    //distinto, donde se pueda ingresar los x nombres de todos los equipos
+    public void nameEquipo(){
+        this.mensaje0 = new JLabel("Nombre del equipo");
+        this.mensaje0.setBounds(10, 10, 160, 20);
+        this.mensaje0.setHorizontalAlignment(SwingConstants.CENTER);
+        // Importante: Debes añadir los componentes al panel para que sean visibles
+        this.campoIngreso = new JTextField();
+        this.campoIngreso.setBounds(10, 30, 160, 20);
+        this.campoIngreso.setHorizontalAlignment(SwingConstants.CENTER);
+        this.mensaje1.setHorizontalAlignment(SwingConstants.CENTER);
+        add(mensaje0);
+        add(campoIngreso);
+        }
     @Override
     public void actionPerformed(ActionEvent e) {
 
