@@ -57,6 +57,7 @@ public class PantallaInicial extends JPanel {
         setPanelEnabled(panelGenerador,false);
 
         //activamos el estado en que nos encontremos
+        a=3;
         switch (a) {
             case 1:
                 setPanelEnabled(panelNombre,true);

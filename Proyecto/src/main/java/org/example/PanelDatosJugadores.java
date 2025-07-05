@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class PanelDatosJugadores extends JPanel implements ActionListener {
     JButton siguiente;
@@ -28,11 +29,23 @@ public class PanelDatosJugadores extends JPanel implements ActionListener {
     private JButton sgte;
 
     private JTextField campoIngreso;
+    private JTextField campoIngresoR;
+
+    ArrayList<JTextField> cajaTextoNombre;
+    ArrayList<JTextField> cajaTextoRut;
+
+    ArrayList<String> gName;
+    ArrayList<String> gRut;
 
     public PanelDatosJugadores(frameTipo inicial, int numJu){
         this.setLayout(null);
         this.frameaux = inicial;
         this.estadoActual = EstadoPanelDatosJugadores.nombre;
+
+        cajaTextoNombre = new ArrayList<JTextField>();
+        cajaTextoRut = new ArrayList<JTextField>();
+        gName = new ArrayList<String>();
+        gRut = new ArrayList<String>();
 
         int a = 0;
         for(int i=1; i<=numJu; i++) {
@@ -44,26 +57,50 @@ public class PanelDatosJugadores extends JPanel implements ActionListener {
             this.campoIngreso.setBounds(10, 30+a, 160, 20);
             this.campoIngreso.setHorizontalAlignment(SwingConstants.CENTER);
 
+            this.mensaje2 = new JLabel("RUT jugador" + i + ": ");
+            this.mensaje2.setBounds(500, 10+a, 160, 20);
+            this.mensaje2.setHorizontalAlignment(SwingConstants.CENTER);
+            // Importante: Debes añadir los componentes al panel para que sean visibles
+            this.campoIngresoR = new JTextField();
+            this.campoIngresoR.setBounds(500, 30+a, 160, 20);
+            this.campoIngresoR.setHorizontalAlignment(SwingConstants.CENTER);
+
+
+            cajaTextoNombre.add(campoIngreso);
+            cajaTextoRut.add(campoIngresoR);
+
             add(mensaje1);
             add(campoIngreso);
+            add(mensaje2);
+            add(campoIngresoR);
             a+=50;
         }
 
         this.sgte = new JButton("Guardar");
         this.sgte.setBounds(500, 500, 100, 20);
-        sgte.addActionListener(e -> otroEquipo());
+        sgte.addActionListener(e -> otroEquipo(numJu));
         add(sgte);
     }
-    public void otroEquipo(){
-        String textoIngresado = campoIngreso.getText();
-        System.out.println("datos guardado: " + textoIngresado); //solo borra el ultimo, supondre que es por que esta hecho con un ciclo
-        campoIngreso.setText("");
+    public void otroEquipo(int numJu){
+        String Nomjugador = campoIngreso.getText();
+        String RutJugador = campoIngresoR.getText();
+        System.out.println("datos guardado: " + Nomjugador); //solo borra el ultimo, supondre que es por que esta hecho con un ciclo
+        for(int i=0; i<numJu; i++){
+            JTextField n = (JTextField) cajaTextoNombre.get(i);
+            gName.add(n.getText());
+            System.out.println(gName.get(i));
+            JTextField r = (JTextField) cajaTextoRut.get(i);
+            gRut.add(r.getText());
+            System.out.println(gRut.get(i));
+            n.setText("");
+            r.setText("");
+        }
         repaint();
         revalidate();
     }
     //falta agregar ingreso para los otras datos, que seran ingresados horizontalmente
     //comentario nada que ver, Bohemian Rhapsody, canción más buena
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
